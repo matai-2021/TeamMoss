@@ -1,30 +1,55 @@
-import React, { useEffect } from 'react'
-import { connect } from 'react-redux'
+import React, { useState } from 'react'
+// import { getAllTips } from '../getAllTips'
+import ShowAllTips from './ShowAllTips'
 
-import { fetchFruits } from '../actions'
+function App () {
+  const [dropDownValue, setdropDownValue] = useState('')
+  const [isRandom, setIsRandom] = useState(false)
 
-function App (props) {
-  useEffect(() => {
-    props.dispatch(fetchFruits())
-  }, [])
+  function handleButtonClick() {
+    console.log(dropDownValue)
+    console.log(isRandom)
+  }
+
+  function handleValueChange (event) {
+    setdropDownValue(event.target.value)
+  }
+
+  function handleCheckboxChange () {
+    if (isRandom === true) {
+      setIsRandom(false)
+    }
+    if (isRandom === false) {
+      setIsRandom(true)
+    }
+  }
+
+  function handleCheckboxClick () {
+  }
+
 
   return (
     <>
-      <div className='app'>
-        <h1>Fullstack Boilerplate - with Fruits!</h1>
-        <ul>
-          {props.fruits.map(fruit => (
-            <li key={fruit}>{fruit}</li>
-          ))}
-        </ul>
+      <div>
+        <ShowAllTips randomDecider={isRandom} teacher={}/>
+      
+        <select onChange={handleValueChange} value={dropDownValue}>
+          <option value={'Don'}>Don</option>
+          <option value={'Karel'}>Karel</option>
+          <option value={'Prue'}>Prue</option>
+          <option value={'Laché'}>Laché</option>
+          </select>
+          <input type="checkbox" name='checkbox' onChange={handleCheckboxChange} value={isRandom} onClick={handleCheckboxClick}/>
+          <label htmlFor='checkbox'>
+            Random
+          </label>
+          <div>
+        <button onClick={handleButtonClick}>Submit</button>
+          </div>
       </div>
     </>
   )
 }
-const mapStateToProps = (globalState) => {
-  return {
-    fruits: globalState.fruits
-  }
-}
 
-export default connect(mapStateToProps)(App)
+
+export default App
