@@ -6,7 +6,7 @@ function App () {
   const [dropDownValue, setdropDownValue] = useState('')
   const [isRandom, setIsRandom] = useState(false)
 
-  function handleButtonClick() {
+  function handleButtonClick () {
     console.log(dropDownValue)
     console.log(isRandom)
   }
@@ -27,29 +27,27 @@ function App () {
   function handleCheckboxClick () {
   }
 
-
   return (
     <>
       <div>
-        <ShowAllTips randomDecider={isRandom} teacher={}/>
-      
+        <ShowAllTips randomDecider={isRandom} teacher={'name'}/>
+
         <select onChange={handleValueChange} value={dropDownValue}>
           <option value={'Don'}>Don</option>
           <option value={'Karel'}>Karel</option>
           <option value={'Prue'}>Prue</option>
           <option value={'Laché'}>Laché</option>
-          </select>
-          <input type="checkbox" name='checkbox' onChange={handleCheckboxChange} value={isRandom} onClick={handleCheckboxClick}/>
-          <label htmlFor='checkbox'>
+        </select>
+        <input type="checkbox" name='checkbox' onChange={handleCheckboxChange} value={isRandom} onClick={handleCheckboxClick}/>
+        <label htmlFor='checkbox'>
             Random
-          </label>
-          <div>
-        <button onClick={handleButtonClick}>Submit</button>
-          </div>
+        </label>
+        <div>
+          <button onClick={handleButtonClick}>Submit</button>
+        </div>
       </div>
     </>
   )
 }
-
 
 export default App
