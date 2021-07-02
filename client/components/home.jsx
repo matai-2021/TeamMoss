@@ -28,29 +28,29 @@ function Home (props) {
 
   return (
     <div>
-      <div className="hero-body">
-        <div className="has-text-left-mobile">
-          <div className="field">
-            <label className="label">Select Tipper</label>
-            <div className="control">
-              <div className="select">
-                <select onChange={handleValueChange}>
-                  <option>---</option>
-                  <option value={'don'}>Don</option>
-                  <option value={'karel'}>Karel</option>
-                  <option value={'prue'}>Prue</option>
-                  <option value={'lache'}>Lache</option>
-                </select>
-              </div>
-            </div>
-            <label className="checkbox">
-              <input type="checkbox" name='checkbox' checked={isRandom} onChange={handleCheckboxChange} value={isRandom} onClick={handleCheckboxClick} />
-              Random Tips
-            </label>
-          </div>
-          <div className="level-item">☎️<strong>0800 </strong><a className="button is-danger ml-4" onClick={handleButtonClick}>Call!</a></div>
+      <div >
 
+        <div className="field ">
+          <label className="label level-item is-large">0800-</label>
+
+          <div className="control">
+            <div className="select level-item  is-large">
+              <select onChange={handleValueChange}>
+                <option>---</option>
+                <option value={'don'}>Don</option>
+                <option value={'karel'}>Karel</option>
+                <option value={'prue'}>Prue</option>
+                <option value={'lache'}>Lache</option>
+              </select>
+            </div>
+          </div>
+          <label className="checkbox level-item">
+            <input type="checkbox" name='checkbox' checked={isRandom} onChange={handleCheckboxChange} value={isRandom} onClick={handleCheckboxClick} />
+            <p className="content is-large">Random Tips</p>
+          </label>
         </div>
+        <div className="level-item"><a className="button is-danger ml-4 is-large" onClick={handleButtonClick}>☎️ Call!</a></div>
+
       </div>
     </div>
   )

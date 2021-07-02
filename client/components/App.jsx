@@ -14,16 +14,18 @@ function App (props) {
   return (
 
     <div>
-      <main className="hero">
-        <header className="hero-head has-background-warning p-6">
-          <p className="title  has-text-link has-text-centered">
-            ☎️ Hot Tip Hotline ☎️
-          </p>
-          <p className="subtitle has-text-centered has-text-danger">
-            🔥🔥 Call now to get THE HOTTEST Tips around🔥🔥
-          </p>
-        </header>
-      </main>
+      <a href="/">
+        <main className="hero">
+          <header className="hero-head has-background-warning p-6">
+            <p className="title  has-text-link has-text-centered">
+              ☎️ Hot Tip Hotline ☎️
+            </p>
+            <p className="subtitle has-text-centered has-text-danger">
+              🔥🔥 Call now to get THE HOTTEST Tips around🔥🔥
+            </p>
+          </header>
+        </main>
+      </a>
       <Route exact path='/' render={() => <Home history={props.history} setFunction={setIsRandom} />} />
       <Route exact path='/tips/:name' render={() => <ShowAllTips randomDecider={isRandom} />} />
     </div>
