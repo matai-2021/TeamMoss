@@ -28,21 +28,28 @@ function Home (props) {
 
   return (
     <div>
-      <p>Dial 0800-
-        <select onChange={handleValueChange} value={dropDownValue}>
-          <option>---</option>
-          <option value={'don'}>Don</option>
-          <option value={'karel'}>Karel</option>
-          <option value={'prue'}>Prue</option>
-          <option value={'lache'}>Lache</option>
-        </select>
-        <input type="checkbox" name='checkbox' checked={isRandom} onChange={handleCheckboxChange} value={isRandom} onClick={handleCheckboxClick} />
-        <label htmlFor='checkbox'>
-            Random
-        </label>
-      </p>
-      <div>
-        <button onClick={handleButtonClick}>Call me!</button>
+      <div className="hero-body">
+        <div className="has-text-left-mobile">
+          <div className="field">
+            <label className="label">Select Tipper</label>
+            <div className="control">
+              <div className="select">
+                <select onChange={handleValueChange}>
+                  <option value={'don'}>Don</option>
+                  <option value={'karel'}>Karel</option>
+                  <option value={'prue'}>Prue</option>
+                  <option value={'lache'}>Lache</option>
+                </select>
+              </div>
+            </div>
+            <label className="checkbox">
+              <input type="checkbox" name='checkbox' onChange={handleCheckboxChange} value={isRandom} onClick={handleCheckboxClick} />
+              Random Tips
+            </label>
+          </div>
+          <div className="level-item">☎️<strong>0800 </strong><a className="button is-danger ml-4" onClick={handleButtonClick}>Submit</a></div>
+
+        </div>
       </div>
     </div>
   )
