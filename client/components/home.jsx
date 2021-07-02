@@ -35,6 +35,7 @@ function Home (props) {
             <div className="control">
               <div className="select">
                 <select onChange={handleValueChange}>
+                  <option>---</option>
                   <option value={'don'}>Don</option>
                   <option value={'karel'}>Karel</option>
                   <option value={'prue'}>Prue</option>
@@ -43,11 +44,11 @@ function Home (props) {
               </div>
             </div>
             <label className="checkbox">
-              <input type="checkbox" name='checkbox' onChange={handleCheckboxChange} value={isRandom} onClick={handleCheckboxClick} />
+              <input type="checkbox" name='checkbox' checked={isRandom} onChange={handleCheckboxChange} value={isRandom} onClick={handleCheckboxClick} />
               Random Tips
             </label>
           </div>
-          <div className="level-item">☎️<strong>0800 </strong><a className="button is-danger ml-4" onClick={handleButtonClick}>Submit</a></div>
+          <div className="level-item">☎️<strong>0800 </strong><a className="button is-danger ml-4" onClick={handleButtonClick}>Call!</a></div>
 
         </div>
       </div>
