@@ -4,3 +4,8 @@ html,
 body {
   font-family: 'Montserrat', sans-serif;
 }
+
+.hero-body {
+  height: 100vh;
+  background-color: aquamarine;
+}
