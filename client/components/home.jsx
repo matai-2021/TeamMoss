@@ -29,6 +29,7 @@ function Home (props) {
   return (
     <div>
       <select onChange={handleValueChange} value={dropDownValue}>
+        <option>Select</option>
         <option value={'don'}>Don</option>
         <option value={'karel'}>Karel</option>
         <option value={'prue'}>Prue</option>
