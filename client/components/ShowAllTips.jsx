@@ -22,20 +22,40 @@ function ShowAllTips (props) {
 
   return (
     <div>
+      <div className="columns is-centered is-vcentered is-mobile mt-4">
+        <div></div>
+        <div className="column is-two-thirds">
+          <section>
+            <p className="title">🧙 {teacher} Says:</p>
+          </section>
+          <section className="content is-large">
+            {
+              props.randomDecider === true
+                ? (<div className="card m-4">
+                  <div className="card-content">
+                    <div className="content">
+                      {randomTip}
+                    </div>
+                  </div>
+                </div>)
 
-      <h1>{teacher} says :</h1>
-
-      {
-        props.randomDecider === true
-          ? (<h3>{randomTip}</h3>)
-
-          : (<ul>
-            {tips.map(tip =>
-              (<li key={tip}>{tip}</li>)
-            )}
-          </ul>
-          )
-      }
+                : (<div>
+                  {tips.map(tip =>
+                    (<div key='tip' className="card m-4">
+                      <div className="card-content">
+                        <div className="content">
+                          {tip}
+                        </div>
+                      </div>
+                    </div>)
+                  )}
+                </div>
+                )
+            }
+          </section>
+        </div>
+        <div></div>
+      </div>
 
     </div>
   )
