@@ -35,7 +35,7 @@ function Home (props) {
         <option value={'prue'}>Prue</option>
         <option value={'lache'}>Lache</option>
       </select>
-      <input type="checkbox" name='checkbox' onChange={handleCheckboxChange} value={isRandom} onClick={handleCheckboxClick}/>
+      <input type="checkbox" name='checkbox' onChange={handleCheckboxChange} value={isRandom} onClick={handleCheckboxClick} />
       <label htmlFor='checkbox'>
             Random
       </label>
