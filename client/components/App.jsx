@@ -6,7 +6,7 @@ import ShowAllTips from './ShowAllTips'
 import Home from './home'
 
 function App (props) {
-  const [isRandom, setIsRandom] = useState(false)
+  const [isRandom, setIsRandom] = useState(true)
   useEffect(() => {
     console.log(isRandom)
   }, [isRandom])

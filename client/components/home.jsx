@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 function Home (props) {
   const [dropDownValue, setdropDownValue] = useState('')
-  const [isRandom, setIsRandom] = useState(false)
+  const [isRandom, setIsRandom] = useState(true)
 
   function handleButtonClick () {
     props.history.push(`/tips/${dropDownValue}`)
@@ -28,19 +28,21 @@ function Home (props) {
 
   return (
     <div>
-      <select onChange={handleValueChange} value={dropDownValue}>
-        <option>Select</option>
-        <option value={'don'}>Don</option>
-        <option value={'karel'}>Karel</option>
-        <option value={'prue'}>Prue</option>
-        <option value={'lache'}>Lache</option>
-      </select>
-      <input type="checkbox" name='checkbox' onChange={handleCheckboxChange} value={isRandom} onClick={handleCheckboxClick} />
-      <label htmlFor='checkbox'>
+      <p>Dial 0800-
+        <select onChange={handleValueChange} value={dropDownValue}>
+          <option>---</option>
+          <option value={'don'}>Don</option>
+          <option value={'karel'}>Karel</option>
+          <option value={'prue'}>Prue</option>
+          <option value={'lache'}>Lache</option>
+        </select>
+        <input type="checkbox" name='checkbox' checked={isRandom} onChange={handleCheckboxChange} value={isRandom} onClick={handleCheckboxClick} />
+        <label htmlFor='checkbox'>
             Random
-      </label>
+        </label>
+      </p>
       <div>
-        <button onClick={handleButtonClick}>Submit</button>
+        <button onClick={handleButtonClick}>Call me!</button>
       </div>
     </div>
   )
