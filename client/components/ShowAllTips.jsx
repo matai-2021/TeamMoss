@@ -21,7 +21,7 @@ function ShowAllTips (props) {
   const randomTip = tips[Math.floor(Math.random() * (tips.length))]
 
   return (
-    <div>
+    <div className="hero-body">
       <div className="columns is-centered is-vcentered is-mobile mt-4">
         <div></div>
         <div className="column is-two-thirds">
